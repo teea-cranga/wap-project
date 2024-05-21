@@ -54,7 +54,6 @@ namespace wap_project
             {
                 e.Cancel = true;
                 errFName.SetError((Control)sender, "This field is mandatory.");
-
             }
 
         }
