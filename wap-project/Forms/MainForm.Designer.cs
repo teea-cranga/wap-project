@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnAddStud = new System.Windows.Forms.Button();
             this.btnEditStud = new System.Windows.Forms.Button();
@@ -39,8 +40,11 @@
             this.colLN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSub = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createAReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddStud
@@ -99,6 +103,7 @@
             this.btnDelStud.TabIndex = 4;
             this.btnDelStud.Text = "Delete Student";
             this.btnDelStud.UseVisualStyleBackColor = false;
+            this.btnDelStud.Click += new System.EventHandler(this.btnDelStud_Click);
             // 
             // lvStudents
             // 
@@ -135,6 +140,20 @@
             this.colYear.Text = "Year";
             this.colYear.Width = 116;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createAReportToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // createAReportToolStripMenuItem
+            // 
+            this.createAReportToolStripMenuItem.Name = "createAReportToolStripMenuItem";
+            this.createAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createAReportToolStripMenuItem.Text = "Create a report";
+            this.createAReportToolStripMenuItem.Click += new System.EventHandler(this.createAReportToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +161,7 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(815, 489);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.lvStudents);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -149,6 +169,7 @@
             this.Text = "Academify";
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,6 +185,8 @@
         private System.Windows.Forms.ColumnHeader colLN;
         private System.Windows.Forms.ColumnHeader colSub;
         private System.Windows.Forms.ColumnHeader colYear;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem createAReportToolStripMenuItem;
     }
 }
 

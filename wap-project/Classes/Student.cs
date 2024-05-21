@@ -8,6 +8,7 @@ namespace wap_project.Classes
     public class Student
     {
         #region Attributes
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName {  get; set; }
         public Subject Subject { get; set; }    
@@ -17,8 +18,9 @@ namespace wap_project.Classes
         {
         }//end constructor without parameters
          //
-        public Student(string firstName, string lastName, Subject subject)
+        public Student(int id, string firstName, string lastName, Subject subject)
         {
+            Id = id;
             FirstName = firstName;
             LastName = lastName;
             Subject = subject;

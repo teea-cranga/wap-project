@@ -532,10 +532,13 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACUSAcc8P8Awk+so8KmJkMAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAzAAAAHpCAYAAABdptnVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAxHxJREFUeF7svQd4HNW9/s/vf+9NrwRw77YsW13aXfXee5e7jSs2NsbYBtuAwdj0
+        vAAADrwBlbxySQAAxHxJREFUeF7svQd4HNW9/s/vf+9NrwRw77YsW13aXfXee5e7jSs2NsbYBtuAwdj0
         3nsLvUOooddASAgkJKQQ0kjvyU1uyr259/3PO6sjxuORtmhky7vv53neZ6Xd2Z0q6Xx0zvfMIbNnz0Z5
         ebln8vPzMW3aNIwdOxbjxo2zM378+CETzTLMWGu5mVPH46wjp+LRU2eirWQSDj/ig3U4PyfazxypDLb+
         aLeRrw33M5ihPuOIMeNw0to0fP+xYmxckmqds3EYY8W5jHlkJkyYgIyMDJSVle0Vr+vAmWiX80ogEMCk

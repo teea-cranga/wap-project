@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace wap_project.Classes
 {
-
+    [Serializable]
     public class Year
     {
         #region Attributes
