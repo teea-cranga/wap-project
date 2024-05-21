@@ -24,14 +24,13 @@ namespace wap_project
             Student = student;
         }
 
-        
-
         private void AddStudForm_Load(object sender, EventArgs e)
         {
             if(Student != null)
             {
                 tbFN.Text = Student.FirstName;
                 tbLN.Text = Student.LastName;
+                cbFAC.SelectedIndex = 0;
             }
         }
 
@@ -41,21 +40,25 @@ namespace wap_project
             {
                 Student.FirstName = tbFN.Text;
                 Student.LastName = tbLN.Text;
+                Student.Subject = new Subject(cbFAC.Text, 3);
             }
-        }
-
-        private void tbFN_Validated(object sender, EventArgs e)
-        {
-            errFName.SetError((Control)sender,"Mandatory field.");
         }
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
-            if (tbFN.Text.Length == 0)
+            if (tbFN.Text.Length < 1 || tbFN.Text.Any(Char.IsDigit))
             {
                 e.Cancel = true;
-                errFName.SetError((Control)sender, "This field is mandatory.");
+                errFName.SetError((Control)sender, "Invalid name.");
             }
+        }
 
+        private void tbLN_Validating(object sender, CancelEventArgs e)
+        {
+            if (tbLN.Text.Length < 3 || tbLN.Text.Any(Char.IsDigit))
+            {
+                e.Cancel = true;
+                errFName.SetError((Control)sender, "Invalid name.");
+            }
         }
     }
 }

@@ -6,16 +6,20 @@ namespace wap_project.Classes
     public class Subject
     {
         public string SubjectName { get; set; }
-        public int Credits { get; set; }
+        public int Years { get; set; }
         //
         public Subject(){}
         //
-        public Subject(string subjectName, int credits)
+        public Subject(string subjectName, int years)
         {
             SubjectName = subjectName;
-            Credits = credits;
+            Years = years;
         }
         //
+        override public string ToString()
+        { 
+            return SubjectName + " no. Years: " + Years;
+        }
     }//end class
 }
 

@@ -10,18 +10,18 @@ namespace wap_project.Classes
         #region Attributes
         public string FirstName { get; set; }
         public string LastName {  get; set; }
-        public Subject Subjects { get; set; }    
+        public Subject Subject { get; set; }    
         #endregion
 
         public Student()
         {
         }//end constructor without parameters
          //
-        public Student(string firstName, string lastName, Subject subjects)
+        public Student(string firstName, string lastName, Subject subject)
         {
             FirstName = firstName;
             LastName = lastName;
-            Subjects = subjects;
+            Subject = subject;
         }//end constructor with all parameters
          //
 

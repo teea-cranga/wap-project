@@ -32,9 +32,13 @@
             this.btnAddStud = new System.Windows.Forms.Button();
             this.btnEditStud = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.PictureBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDelStud = new System.Windows.Forms.Button();
+            this.lvStudents = new System.Windows.Forms.ListView();
+            this.colFN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colLN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSub = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +46,7 @@
             // btnAddStud
             // 
             this.btnAddStud.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnAddStud.Location = new System.Drawing.Point(358, 19);
+            this.btnAddStud.Location = new System.Drawing.Point(501, 19);
             this.btnAddStud.Name = "btnAddStud";
             this.btnAddStud.Size = new System.Drawing.Size(167, 41);
             this.btnAddStud.TabIndex = 1;
@@ -53,12 +57,13 @@
             // btnEditStud
             // 
             this.btnEditStud.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnEditStud.Location = new System.Drawing.Point(358, 66);
+            this.btnEditStud.Location = new System.Drawing.Point(501, 66);
             this.btnEditStud.Name = "btnEditStud";
             this.btnEditStud.Size = new System.Drawing.Size(167, 41);
             this.btnEditStud.TabIndex = 2;
             this.btnEditStud.Text = "Edit Student";
             this.btnEditStud.UseVisualStyleBackColor = false;
+            this.btnEditStud.Click += new System.EventHandler(this.btnEditStud_Click);
             // 
             // textBox1
             // 
@@ -71,13 +76,6 @@
             this.textBox1.Size = new System.Drawing.Size(398, 222);
             this.textBox1.TabIndex = 3;
             this.textBox1.TabStop = false;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(68, 210);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(681, 223);
-            this.treeView1.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -95,12 +93,47 @@
             // btnDelStud
             // 
             this.btnDelStud.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnDelStud.Location = new System.Drawing.Point(358, 111);
+            this.btnDelStud.Location = new System.Drawing.Point(501, 111);
             this.btnDelStud.Name = "btnDelStud";
             this.btnDelStud.Size = new System.Drawing.Size(167, 41);
             this.btnDelStud.TabIndex = 4;
             this.btnDelStud.Text = "Delete Student";
             this.btnDelStud.UseVisualStyleBackColor = false;
+            // 
+            // lvStudents
+            // 
+            this.lvStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colFN,
+            this.colLN,
+            this.colSub,
+            this.colYear});
+            this.lvStudents.HideSelection = false;
+            this.lvStudents.Location = new System.Drawing.Point(58, 204);
+            this.lvStudents.Name = "lvStudents";
+            this.lvStudents.Size = new System.Drawing.Size(700, 236);
+            this.lvStudents.TabIndex = 6;
+            this.lvStudents.UseCompatibleStateImageBehavior = false;
+            this.lvStudents.View = System.Windows.Forms.View.Details;
+            // 
+            // colFN
+            // 
+            this.colFN.Text = "First Name";
+            this.colFN.Width = 180;
+            // 
+            // colLN
+            // 
+            this.colLN.Text = "Last Name";
+            this.colLN.Width = 207;
+            // 
+            // colSub
+            // 
+            this.colSub.Text = "Subject";
+            this.colSub.Width = 191;
+            // 
+            // colYear
+            // 
+            this.colYear.Text = "Year";
+            this.colYear.Width = 116;
             // 
             // MainForm
             // 
@@ -109,8 +142,8 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(815, 489);
+            this.Controls.Add(this.lvStudents);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.treeView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Academify";
@@ -124,9 +157,13 @@
         private System.Windows.Forms.Button btnAddStud;
         private System.Windows.Forms.Button btnEditStud;
         private System.Windows.Forms.PictureBox textBox1;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDelStud;
+        private System.Windows.Forms.ListView lvStudents;
+        private System.Windows.Forms.ColumnHeader colFN;
+        private System.Windows.Forms.ColumnHeader colLN;
+        private System.Windows.Forms.ColumnHeader colSub;
+        private System.Windows.Forms.ColumnHeader colYear;
     }
 }
 

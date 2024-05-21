@@ -14,7 +14,9 @@ namespace wap_project.Classes
 
         public Year()
         {
-            StudentsFromYear = new List<Student>();        
+            StartingYear = DateTime.Now;
+            StudentsFromYear = new List<Student>();
+            EndingYear = DateTime.Now.AddYears(3);
         }
 
         public Year(DateTime startingYear, List<Student> studentsFromYear)
@@ -28,6 +30,11 @@ namespace wap_project.Classes
         public int returnYear(DateTime startOrEnd) 
         {
             return startOrEnd.Year;
+        }
+
+        public override string ToString()
+        {
+            return returnYear(StartingYear) + " - " + returnYear(EndingYear); 
         }
     }//END CLASS
 }
