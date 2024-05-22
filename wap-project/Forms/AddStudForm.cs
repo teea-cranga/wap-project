@@ -50,6 +50,11 @@ namespace wap_project
                 e.Cancel = true;
                 errFName.SetError((Control)sender, "Invalid name.");
             }
+            else
+            {
+                e.Cancel = false;
+                errFName.Clear();
+            }
         }
 
         private void tbLN_Validating(object sender, CancelEventArgs e)
@@ -58,6 +63,11 @@ namespace wap_project
             {
                 e.Cancel = true;
                 errFName.SetError((Control)sender, "Invalid name.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errLName.Clear();
             }
         }
     }

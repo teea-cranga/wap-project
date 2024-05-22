@@ -23,6 +23,7 @@ namespace wap_project
     {
 
         public Year Year;
+        private int index;
         public void DisplayStudent()
         {
             lvStudents.Items.Clear();
@@ -60,14 +61,13 @@ namespace wap_project
         {
             if(lvStudents.SelectedItems.Count == 0)
             {
-                MessageBox.Show("No student was selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No student was selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             AddStudForm addStudForm = new AddStudForm();
             Student stud = lvStudents.SelectedItems[0].Tag as Student;
             if (lvStudents.SelectedItems.Count == 1)
             {
-                
                 addStudForm.Student = stud;
                 if (addStudForm.ShowDialog() == DialogResult.OK)
                 {
@@ -80,7 +80,7 @@ namespace wap_project
         {
             if (lvStudents.SelectedItems.Count == 0)
             {
-                MessageBox.Show("No student was selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No student was selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Student stud = lvStudents.SelectedItems[0].Tag as Student;
@@ -147,7 +147,12 @@ namespace wap_project
                     sw.WriteLine("Student count: " + students.Count);
                     foreach (Student stud in students)
                     {
-                        string line = "Student full name: " + stud.FirstName + " " + stud.LastName + " with subject: " + stud.Subject.ToString() + " during the years: " + Year.ToString();
+                        string line = "Student full name: " + 
+                            stud.FirstName + " " + 
+                            stud.LastName + " with subject: " +
+                            stud.Subject.ToString() + 
+                            " during the years: " +
+                            Year.ToString();
                         sw.WriteLine(line);
                     }
                     sw.Close();
@@ -165,6 +170,14 @@ namespace wap_project
 
         private void makeXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(Year.StudentsFromYear.Count == 0)
+            {
+                MessageBox.Show("Not enough students to perform this action.",
+                    "Invalid number", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+                return;
+            }
             SaveFileDialog sfd = new SaveFileDialog();
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -200,5 +213,106 @@ namespace wap_project
                 }
             }
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if(Year.StudentsFromYear.Count == 0)
+            {
+                MessageBox.Show("Not enough students.", "Invalid number", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return;
+            }
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+                printDocument.Print();
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+            Font font = new Font("Microsoft Sans Serif", 20);
+
+            var pageSettings = e.PageSettings;
+
+            var printAreaHeight = e.MarginBounds.Height;
+
+            var printAreaWidth = e.MarginBounds.Width;
+
+            var marginLeft = pageSettings.Margins.Left;
+
+            var marginTop = pageSettings.Margins.Top;
+
+
+            if (pageSettings.Landscape)
+            {
+                var intTemp = printAreaHeight;
+                printAreaHeight = printAreaWidth;
+                printAreaWidth = intTemp;
+            }
+
+            const int rowHeight = 40;
+            var columnWidth = printAreaWidth;
+
+            StringFormat fmt = new StringFormat(StringFormatFlags.LineLimit | StringFormatFlags.NoClip);
+            fmt.Trimming = StringTrimming.EllipsisCharacter;
+
+            var currentY = marginTop;
+            while (index < Year.StudentsFromYear.Count)
+            {
+
+                var currentX = marginLeft;
+                currentY += rowHeight;
+              
+                e.Graphics.DrawString(
+                    "First name: " + Year.StudentsFromYear[index].FirstName,
+                    font,
+                    Brushes.Black,
+                    new RectangleF(currentX, currentY, columnWidth, rowHeight),
+                    fmt);
+
+                currentY += rowHeight;
+
+                e.Graphics.DrawString(
+                    "Last name: " + Year.StudentsFromYear[index].LastName,
+                    font,
+                    Brushes.Black,
+                    currentX,
+                    currentY,
+                    fmt);
+                currentY += rowHeight;
+
+                e.Graphics.DrawString(
+                    "Subject: " + Year.StudentsFromYear[index].Subject.ToString(),
+                    font,
+                    Brushes.Black,
+                    currentX,
+                    currentY,
+                    fmt);
+                currentY += rowHeight;
+
+                e.Graphics.DrawString(
+                    Year.ToString(),
+                    font,
+                    Brushes.Black,
+                    currentX,
+                    currentY,
+                    fmt);
+                currentY += rowHeight;
+
+                index++;
+
+                currentY += rowHeight;
+
+                if (currentY + rowHeight > printAreaHeight)
+                {
+                    e.HasMorePages = true;
+                    break;
+                }
+            }
+        }
+
+        private void printDocument_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            index = 0;
+        }
+
     }
 }

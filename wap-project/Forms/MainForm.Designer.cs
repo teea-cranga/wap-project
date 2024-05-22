@@ -51,11 +51,14 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeAReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deserialiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTheAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.deserialiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -92,7 +95,7 @@
             this.textBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBox1.BackgroundImage")));
             this.textBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.textBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("textBox1.InitialImage")));
-            this.textBox1.Location = new System.Drawing.Point(-46, -64);
+            this.textBox1.Location = new System.Drawing.Point(-44, -56);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(398, 222);
             this.textBox1.TabIndex = 3;
@@ -129,6 +132,7 @@
             this.colLN,
             this.colSub,
             this.colYear});
+            this.lvStudents.FullRowSelect = true;
             this.lvStudents.HideSelection = false;
             this.lvStudents.Location = new System.Drawing.Point(56, 210);
             this.lvStudents.Name = "lvStudents";
@@ -237,16 +241,23 @@
             // makeAReportToolStripMenuItem
             // 
             this.makeAReportToolStripMenuItem.Name = "makeAReportToolStripMenuItem";
-            this.makeAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeAReportToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.makeAReportToolStripMenuItem.Text = "Make a report";
             this.makeAReportToolStripMenuItem.Click += new System.EventHandler(this.makeAReportToolStripMenuItem_Click);
             // 
             // makeXMLFileToolStripMenuItem
             // 
             this.makeXMLFileToolStripMenuItem.Name = "makeXMLFileToolStripMenuItem";
-            this.makeXMLFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeXMLFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.makeXMLFileToolStripMenuItem.Text = "Make XML file";
             this.makeXMLFileToolStripMenuItem.Click += new System.EventHandler(this.makeXMLFileToolStripMenuItem_Click);
+            // 
+            // deserialiseToolStripMenuItem
+            // 
+            this.deserialiseToolStripMenuItem.Name = "deserialiseToolStripMenuItem";
+            this.deserialiseToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.deserialiseToolStripMenuItem.Text = "Deserialise";
+            this.deserialiseToolStripMenuItem.Click += new System.EventHandler(this.deserialiseToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -259,14 +270,15 @@
             // aboutTheAppToolStripMenuItem
             // 
             this.aboutTheAppToolStripMenuItem.Name = "aboutTheAppToolStripMenuItem";
-            this.aboutTheAppToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutTheAppToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.aboutTheAppToolStripMenuItem.Text = "About the app...";
             this.aboutTheAppToolStripMenuItem.Click += new System.EventHandler(this.aboutTheAppToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(815, 25);
@@ -275,21 +287,32 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(109, 22);
             this.toolStripButton1.Text = "Create statistics";
             this.toolStripButton1.ToolTipText = "Create stats";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // deserialiseToolStripMenuItem
+            // toolStripButton2
             // 
-            this.deserialiseToolStripMenuItem.Name = "deserialiseToolStripMenuItem";
-            this.deserialiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deserialiseToolStripMenuItem.Text = "Deserialise";
-            this.deserialiseToolStripMenuItem.Click += new System.EventHandler(this.deserialiseToolStripMenuItem_Click);
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(100, 22);
+            this.toolStripButton2.Text = "Print students";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // printDocument
+            // 
+            this.printDocument.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_BeginPrint);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument;
+            this.printDialog1.UseEXDialog = true;
             // 
             // MainForm
             // 
@@ -353,6 +376,9 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem deserialiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 
