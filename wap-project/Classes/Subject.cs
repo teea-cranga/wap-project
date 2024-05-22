@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace wap_project.Classes
 {
@@ -19,6 +20,23 @@ namespace wap_project.Classes
         override public string ToString()
         { 
             return SubjectName + " no. Years: " + Years;
+        }
+
+        public int stringToNumber(string subjectName)
+        {
+            switch (subjectName.Length)
+            {
+                case (10):
+                    return 1;
+                case(11):
+                    return 2;
+                case (20):
+                    return 3;
+                case (32):
+                    return 4;
+                default:
+                    return 4;
+            }
         }
     }//end class
 }

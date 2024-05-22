@@ -176,7 +176,14 @@ namespace wap_project
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            if (Year.StudentsFromYear.Count == 0)
+            {
+                MessageBox.Show("No students available.", "Invalid number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
+            StatsForm sf = new StatsForm(Year.StudentsFromYear);
+            sf.ShowDialog();
         }
 
         private void deserialiseToolStripMenuItem_Click(object sender, EventArgs e)
