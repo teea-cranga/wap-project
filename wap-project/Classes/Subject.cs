@@ -19,7 +19,7 @@ namespace wap_project.Classes
         //
         override public string ToString()
         { 
-            return SubjectName + " no. Years: " + Years;
+            return SubjectName + " -> Number of years the subject has: " + Years;
         }
 
         public int stringToNumber(string subjectName)

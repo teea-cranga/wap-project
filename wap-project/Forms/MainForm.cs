@@ -21,7 +21,7 @@ namespace wap_project
     [Serializable]
     public partial class MainForm : Form
     {
-
+        private Database.StudentDB studentDB = new Database.StudentDB();
         public Year Year;
         private int index;
         public void DisplayStudent()
@@ -44,6 +44,11 @@ namespace wap_project
             Year = new Year();
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            studentDB.loadStudents();
+            DisplayStudent();
+        }
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
@@ -52,7 +57,9 @@ namespace wap_project
             addStudForm.Student = stud;
             if (addStudForm.ShowDialog()  == DialogResult.OK)
             {
+                studentDB.addStudent(stud);
                 Year.StudentsFromYear.Add(stud);
+                
                 DisplayStudent();
             }
         }
@@ -71,6 +78,7 @@ namespace wap_project
                 addStudForm.Student = stud;
                 if (addStudForm.ShowDialog() == DialogResult.OK)
                 {
+                    studentDB.editStudent(stud);
                     DisplayStudent();
                 }
             }        
@@ -90,8 +98,11 @@ namespace wap_project
                     "Delete student",
                     MessageBoxButtons.YesNo, 
                     MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    studentDB.deleteStudent(stud);
                     Year.StudentsFromYear.Remove(stud);
-                DisplayStudent();
+                    DisplayStudent();
+                }
             }
         }
 
@@ -314,5 +325,6 @@ namespace wap_project
             index = 0;
         }
 
+        
     }
 }
