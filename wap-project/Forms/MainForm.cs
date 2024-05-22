@@ -5,13 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using wap_project.Classes;
 using wap_project.Database;
+using wap_project.Forms;
 
 namespace wap_project
 {
@@ -83,12 +86,21 @@ namespace wap_project
             Student stud = lvStudents.SelectedItems[0].Tag as Student;
             if (lvStudents.SelectedItems.Count == 1)
             {
-                Year.StudentsFromYear.Remove(stud);
+                if (MessageBox.Show("Are you sure you want to delete this student?", 
+                    "Delete student",
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                    Year.StudentsFromYear.Remove(stud);
                 DisplayStudent();
             }
         }
 
         private void createAReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createReport();
+        }
+
+        private void makeAReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             createReport();
         }
@@ -119,6 +131,7 @@ namespace wap_project
             }
         }
 
+
         private void createReport()
         {
             List<Student> students = new List<Student>(Year.StudentsFromYear);
@@ -142,6 +155,28 @@ namespace wap_project
 
                 }
             }
+        }
+
+        private void aboutTheAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.ShowDialog();
+        }
+
+        private void makeXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
+                using (FileStream stream = File.Create(sfd.FileName))
+                    serializer.Serialize(stream, Year.StudentsFromYear);
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

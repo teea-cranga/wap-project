@@ -156,7 +156,7 @@
             this.cbFAC.Items.AddRange(new object[] {
             "Statistics",
             "Economic Informatics",
-            "Economic Informatics(studying in English)",
+            "Economic Informatics(in English)",
             "Cybernetics"});
             this.cbFAC.Location = new System.Drawing.Point(140, 48);
             this.cbFAC.Name = "cbFAC";
