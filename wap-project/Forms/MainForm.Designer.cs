@@ -42,9 +42,15 @@
             this.colYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.createAReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblStrip = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblStrip2 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddStud
@@ -145,14 +151,56 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createAReportToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
             // 
             // createAReportToolStripMenuItem
             // 
             this.createAReportToolStripMenuItem.Name = "createAReportToolStripMenuItem";
-            this.createAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createAReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.createAReportToolStripMenuItem.Text = "Create a report";
             this.createAReportToolStripMenuItem.Click += new System.EventHandler(this.createAReportToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.lblStrip,
+            this.toolStripStatusLabel2,
+            this.lblStrip2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 467);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(815, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(93, 17);
+            this.toolStripStatusLabel1.Text = "Students count: ";
+            // 
+            // lblStrip
+            // 
+            this.lblStrip.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblStrip.Name = "lblStrip";
+            this.lblStrip.Size = new System.Drawing.Size(13, 17);
+            this.lblStrip.Text = "0";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(73, 17);
+            this.toolStripStatusLabel2.Text = "......................";
+            // 
+            // lblStrip2
+            // 
+            this.lblStrip2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblStrip2.Name = "lblStrip2";
+            this.lblStrip2.Size = new System.Drawing.Size(80, 17);
+            this.lblStrip2.Text = "No report yet.";
             // 
             // MainForm
             // 
@@ -162,15 +210,23 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(815, 489);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lvStudents);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Academify";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,6 +243,11 @@
         private System.Windows.Forms.ColumnHeader colYear;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem createAReportToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStrip;
+        private System.Windows.Forms.ToolStripStatusLabel lblStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 

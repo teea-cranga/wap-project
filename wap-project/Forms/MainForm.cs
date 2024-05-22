@@ -15,11 +15,11 @@ using wap_project.Database;
 
 namespace wap_project
 {
+    [Serializable]
     public partial class MainForm : Form
     {
 
         public Year Year;
-
         public void DisplayStudent()
         {
             lvStudents.Items.Clear();
@@ -32,6 +32,7 @@ namespace wap_project
                 lvi.Tag = stud;
                 lvStudents.Items.Add(lvi);
             }
+            lblStrip.Text = Year.StudentsFromYear.Count.ToString();
         }
 
         public MainForm()
@@ -89,22 +90,56 @@ namespace wap_project
 
         private void createAReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<Student> students = new List<Student>(Year.StudentsFromYear);   
-            SaveFileDialog sfd = new SaveFileDialog();
-            if(sfd.ShowDialog() == DialogResult.OK)
+            createReport();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Alt && e.KeyCode == Keys.S) {
+                createReport();
+                return;
+            }
+
+            if(e.Alt && e.KeyCode == Keys.C)
             {
-                using (StreamWriter sw = new StreamWriter("report_year.txt"))
+                btnAddStud_Click(sender, e);
+                return;
+            }
+
+            if(e.Alt && e.KeyCode == Keys.E)
+            {
+                btnEditStud_Click(sender, e);
+                return;
+            }
+
+            if(e.Alt && e.KeyCode == Keys.D)
+            {
+                btnDelStud_Click(sender, e);
+                return;
+            }
+        }
+
+        private void createReport()
+        {
+            List<Student> students = new List<Student>(Year.StudentsFromYear);
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName))
                 {
-                    foreach(Student stud in students)
-                    {
-                        string line = stud.FirstName + " " + stud.LastName + " " + stud.Subject.ToString() + " " + Year.ToString();
-                        sw.WriteLine(line);
-                    }
                     if (students.Count == 0)
                     {
-                        sw.WriteLine("No clients found");
+                        sw.WriteLine("No students found.");
+                    }
+                    sw.WriteLine("Student count: " + students.Count);
+                    foreach (Student stud in students)
+                    {
+                        string line = "Student full name: " + stud.FirstName + " " + stud.LastName + " with subject: " + stud.Subject.ToString() + " during the years: " + Year.ToString();
+                        sw.WriteLine(line);
                     }
                     sw.Close();
+                    lblStrip2.Text = "Report created!";
+
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 namespace wap_project.Classes
 {
-
+    [Serializable]
     public class Subject
     {
         public string SubjectName { get; set; }
