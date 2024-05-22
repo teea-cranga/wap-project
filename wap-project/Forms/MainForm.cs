@@ -178,5 +178,20 @@ namespace wap_project
         {
 
         }
+
+        private void deserialiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Student>));
+
+                using (FileStream stream = File.OpenRead(openFileDialog.FileName))
+                {
+                    Year.StudentsFromYear = (List<Student>)serializer.Deserialize(stream);
+                    DisplayStudent();
+                }
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.aboutTheAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.deserialiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -227,7 +228,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.makeAReportToolStripMenuItem,
-            this.makeXMLFileToolStripMenuItem});
+            this.makeXMLFileToolStripMenuItem,
+            this.deserialiseToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -281,6 +283,13 @@
             this.toolStripButton1.Text = "Create statistics";
             this.toolStripButton1.ToolTipText = "Create stats";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // deserialiseToolStripMenuItem
+            // 
+            this.deserialiseToolStripMenuItem.Name = "deserialiseToolStripMenuItem";
+            this.deserialiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deserialiseToolStripMenuItem.Text = "Deserialise";
+            this.deserialiseToolStripMenuItem.Click += new System.EventHandler(this.deserialiseToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -343,6 +352,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutTheAppToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem deserialiseToolStripMenuItem;
     }
 }
 
