@@ -51,8 +51,11 @@ namespace wap_project.Database
                         int id = (int)read_id;
                         string lastName = (string)reader["LastName"];
                         string firstName = (string)reader["FirstName"];
-                        Subject sub = new Subject((string)reader["SubjectName"],(int)reader["SubjectYears"]);
+                        string subjectName = (string)reader["SubjectName"];
+                        long years = (long)reader["SubjectYears"];
+                        int yearInt = (int)years;
 
+                        Subject sub = new Subject(subjectName, yearInt);
                         Student stud = new Student(id, firstName, lastName, sub);
                         students.Add(stud);
                     }

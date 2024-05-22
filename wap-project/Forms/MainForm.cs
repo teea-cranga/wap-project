@@ -22,7 +22,7 @@ namespace wap_project
     [Serializable]
     public partial class MainForm : Form
     {
-        //private Database.StudentDB studentDB = new Database.StudentDB();
+        private Database.StudentDB studentDB = new Database.StudentDB();
         public Year Year;
         private int index;
 
@@ -55,7 +55,7 @@ namespace wap_project
             addStudForm.Student = stud;
             if (addStudForm.ShowDialog()  == DialogResult.OK)
             {
-               // studentDB.addStudent(stud);
+                studentDB.addStudent(stud);
                 Year.StudentsFromYear.Add(stud);
                 
                 DisplayStudent();
@@ -76,7 +76,7 @@ namespace wap_project
                 addStudForm.Student = stud;
                 if (addStudForm.ShowDialog() == DialogResult.OK)
                 {
-                    //studentDB.editStudent(stud);
+                    studentDB.editStudent(stud);
                     DisplayStudent();
                 }
             }        
@@ -97,7 +97,7 @@ namespace wap_project
                     MessageBoxButtons.YesNo, 
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //studentDB.deleteStudent(stud);
+                    studentDB.deleteStudent(stud);
                     Year.StudentsFromYear.Remove(stud);
                     DisplayStudent();
                 }
@@ -321,6 +321,12 @@ namespace wap_project
         private void printDocument_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             index = 0;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            studentDB.loadStudents(Year.StudentsFromYear);
+            DisplayStudent();
         }
     }//end class
 

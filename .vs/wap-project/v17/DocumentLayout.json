@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|c:\\users\\teea\\desktop\\programare\\wap-project\\wap-project\\database\\studentdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\database\\studentdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|c:\\users\\teea\\desktop\\programare\\wap-project\\wap-project\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\forms\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|solutionrelative:wap-project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F75D24C8-7164-4C9F-AAE3-B4CEC5D7112C}|wap-project\\wap-project.csproj|C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\forms\\addstudform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,6 +54,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\App.config",
+              "RelativeDocumentMoniker": "wap-project\\App.config",
+              "ToolTip": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\App.config",
+              "RelativeToolTip": "wap-project\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-22T19:19:04.6Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\MainForm.Designer.cs",
@@ -58,34 +74,32 @@
               "RelativeToolTip": "wap-project\\Forms\\MainForm.Designer.cs",
               "ViewState": "AQIAAEMBAAAAAAAAAAAAwE8BAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T18:39:46.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T18:39:46.519Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StudentDB.cs",
               "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Database\\StudentDB.cs",
               "RelativeDocumentMoniker": "wap-project\\Database\\StudentDB.cs",
               "ToolTip": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Database\\StudentDB.cs",
               "RelativeToolTip": "wap-project\\Database\\StudentDB.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAwwF8AAAAqAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAADkAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T14:00:18.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "wap-project\\Forms\\MainForm.cs",
               "ToolTip": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\MainForm.cs",
               "RelativeToolTip": "wap-project\\Forms\\MainForm.cs",
-              "ViewState": "AQIAADQBAAAAAAAAAAAqwGMAAAAWAAAA",
+              "ViewState": "AQIAADsBAAAAAAAAAAAmwEgBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T11:17:04.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T11:17:04.128Z"
             },
             {
               "$type": "Document",
@@ -96,12 +110,11 @@
               "ToolTip": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\MainForm.cs [Design]",
               "RelativeToolTip": "wap-project\\Forms\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T12:40:30.136Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-29T12:40:30.136Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AddStudForm.cs",
               "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\AddStudForm.cs",
               "RelativeDocumentMoniker": "wap-project\\Forms\\AddStudForm.cs",
@@ -109,20 +122,18 @@
               "RelativeToolTip": "wap-project\\Forms\\AddStudForm.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAIwDcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T09:51:27.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T09:51:27.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AddStudForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\AddStudForm.cs",
               "RelativeDocumentMoniker": "wap-project\\Forms\\AddStudForm.cs",
               "ToolTip": "C:\\Users\\Teea\\Desktop\\programare\\wap-project\\wap-project\\Forms\\AddStudForm.cs [Design]",
               "RelativeToolTip": "wap-project\\Forms\\AddStudForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T09:45:04.085Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-11T09:45:04.085Z"
             }
           ]
         }
