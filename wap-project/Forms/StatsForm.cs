@@ -22,6 +22,9 @@ namespace wap_project.Forms
             this.students = students;
         }
 
+
+        // honestly, I looked at someone else's code and took it(changed the group by stuff tho)
+        //  because I didn't quite understand the teacher's example :(
         private void DrawPieChart(Graphics g)
         {
             var studDist = students.GroupBy(c => c.Subject.stringToNumber(c.Subject.SubjectName))

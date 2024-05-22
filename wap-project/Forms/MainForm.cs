@@ -15,17 +15,20 @@ using System.Xml.Serialization;
 using wap_project.Classes;
 using wap_project.Database;
 using wap_project.Forms;
+using System.Data.SQLite;
 
 namespace wap_project
 {
     [Serializable]
     public partial class MainForm : Form
     {
-        private Database.StudentDB studentDB = new Database.StudentDB();
+        //private Database.StudentDB studentDB = new Database.StudentDB();
         public Year Year;
         private int index;
+
+
         public void DisplayStudent()
-        {
+        { 
             lvStudents.Items.Clear();
             foreach (var stud in Year.StudentsFromYear)
             {
@@ -44,11 +47,6 @@ namespace wap_project
             Year = new Year();
             InitializeComponent();
         }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            studentDB.loadStudents();
-            DisplayStudent();
-        }
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
@@ -57,7 +55,7 @@ namespace wap_project
             addStudForm.Student = stud;
             if (addStudForm.ShowDialog()  == DialogResult.OK)
             {
-                studentDB.addStudent(stud);
+               // studentDB.addStudent(stud);
                 Year.StudentsFromYear.Add(stud);
                 
                 DisplayStudent();
@@ -78,7 +76,7 @@ namespace wap_project
                 addStudForm.Student = stud;
                 if (addStudForm.ShowDialog() == DialogResult.OK)
                 {
-                    studentDB.editStudent(stud);
+                    //studentDB.editStudent(stud);
                     DisplayStudent();
                 }
             }        
@@ -99,7 +97,7 @@ namespace wap_project
                     MessageBoxButtons.YesNo, 
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    studentDB.deleteStudent(stud);
+                    //studentDB.deleteStudent(stud);
                     Year.StudentsFromYear.Remove(stud);
                     DisplayStudent();
                 }
@@ -324,7 +322,6 @@ namespace wap_project
         {
             index = 0;
         }
+    }//end class
 
-        
-    }
 }

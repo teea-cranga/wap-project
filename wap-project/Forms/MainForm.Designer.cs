@@ -241,21 +241,21 @@
             // makeAReportToolStripMenuItem
             // 
             this.makeAReportToolStripMenuItem.Name = "makeAReportToolStripMenuItem";
-            this.makeAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeAReportToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.makeAReportToolStripMenuItem.Text = "Make a report";
             this.makeAReportToolStripMenuItem.Click += new System.EventHandler(this.makeAReportToolStripMenuItem_Click);
             // 
             // makeXMLFileToolStripMenuItem
             // 
             this.makeXMLFileToolStripMenuItem.Name = "makeXMLFileToolStripMenuItem";
-            this.makeXMLFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.makeXMLFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.makeXMLFileToolStripMenuItem.Text = "Make XML file";
             this.makeXMLFileToolStripMenuItem.Click += new System.EventHandler(this.makeXMLFileToolStripMenuItem_Click);
             // 
             // deserialiseToolStripMenuItem
             // 
             this.deserialiseToolStripMenuItem.Name = "deserialiseToolStripMenuItem";
-            this.deserialiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deserialiseToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.deserialiseToolStripMenuItem.Text = "Open XML file";
             this.deserialiseToolStripMenuItem.Click += new System.EventHandler(this.deserialiseToolStripMenuItem_Click);
             // 
@@ -334,7 +334,6 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Academify";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
